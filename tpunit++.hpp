@@ -33,7 +33,7 @@ extern "C"
    /**
     * workaround weird gcc+glibc link error with strcpy symbol mangling
     */
-   #if defined(__GNUC__) && defined(__EXCEPTIONS)
+   #if defined(__GNUC__) && defined(__EXCEPTIONS) && !defined(__APPLE__)
       char* strcpy(char* d, const char* s) throw();
    #else
       char* strcpy(char* d, const char* s);
